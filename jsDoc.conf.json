@@ -1,0 +1,9 @@
+{
+  "source": {
+    "include": ["lib", "package.json", "README.md"]
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "destination": "./jsDoc/"
+  }
+}
