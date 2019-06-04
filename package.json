@@ -52,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-push": "npm run lint && npm run docs && git add docs/. && git commit -m 'Updating `docs`'"
     }
   },
   "nyc": {
