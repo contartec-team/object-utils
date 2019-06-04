@@ -1,8 +1,8 @@
 {
   "name": "@ourwork/object-utils",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A set of js object utils",
-  "main": "index.js",
+  "main": "lib/ObjectUtils.js",
   "directories": {
     "test": "tests"
   },
