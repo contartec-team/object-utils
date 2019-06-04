@@ -55,6 +55,12 @@ jobs:
           key: bower-cache-{{ .Branch }}-{{ checksum "bower.json" }}
 
       - run:
+          name:  Download cc-test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      - run:
           name    : Running unit tests
           command : npm run test
 
@@ -74,6 +80,31 @@ jobs:
           paths :
             - ./coverage
 
+  docs_upload:
+    working_directory: /home/circleci/dashboard
+
+    docker:
+      - image: circleci/node:8.10.0
+    
+    steps:
+      - restore_cache:
+          key: repo-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+
+      - restore_cache:
+          key: test-coverage-cache-{{ .Environment.CIRCLE_SHA1 }}
+
+      - run:
+          name:  Downloading cc-test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./coverage/cc-test-reporter
+            chmod +x ./coverage/cc-test-reporter
+
+      - run:
+          name    : Uploading test coverage
+          command : |
+            ./coverage/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.coverage.json coverage/lcov.info
+            ./coverage/cc-test-reporter upload-coverage -i coverage/codeclimate.coverage.json
+
 workflows:
   version: 2
 
@@ -88,3 +119,12 @@ workflows:
       - tests:
           requires:
             - node_dependencies
+
+      - docs_upload:
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              only: master
+          requires:
+            - tests
