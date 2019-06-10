@@ -61,5 +61,8 @@
       "*.js",
       "tests/*"
     ]
+  },
+  "dependencies": {
+    "match-recursive": "^0.1.1"
   }
 }
