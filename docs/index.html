@@ -62,12 +62,6 @@
                       </a></li>
                     
                       <li><a
-                        href='#objectutilsareequal'
-                        class='regular pre-open'>
-                        .areEqual
-                      </a></li>
-                    
-                      <li><a
                         href='#objectutilsgetobjectdiff'
                         class='regular pre-open'>
                         .getObjectDiff
@@ -101,6 +95,24 @@
                         href='#objectutilsremoveattrsbytype'
                         class='regular pre-open'>
                         .removeAttrsByType
+                      </a></li>
+                    
+                      <li><a
+                        href='#objectutilsareequal'
+                        class='regular pre-open'>
+                        .areEqual
+                      </a></li>
+                    
+                      <li><a
+                        href='#objectutilsgetattrnames'
+                        class='regular pre-open'>
+                        .getAttrNames
+                      </a></li>
+                    
+                      <li><a
+                        href='#objectutilsgetvaluebyindex'
+                        class='regular pre-open'>
+                        .getValueByIndex
                       </a></li>
                     
                     </ul>
@@ -462,128 +474,6 @@
 
 ObjectUtils.createPrivateAttributes(object)
 <span class="hljs-comment">// { _a: 1, _b: '2', _c: [1, '2'], _d: new Date() }</span></pre>
-    
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='objectutilsareequal'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>areEqual(object, objectDiff, options = {}, index = 0)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>Returns a copy of <code>attributes</code> as private</p>
-
-    <div class='pre p1 fill-light mt0'>areEqual(object: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, objectDiff: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?, index: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>object</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The base 
-<code>object</code>
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>objectDiff</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The set of options
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
-            = <code>{}</code>)</code>
-	    The set of 
-<code>areEqual</code>
-'s method options 
-<a href="#objectutilsdefault_are_equal_options">ObjectUtils.DEFAULT_ARE_EQUAL_OPTIONS</a>
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>index</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
-            = <code>0</code>)</code>
-	    The set of params
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        The copy of 
-<code>attributes</code>
- with all attrs as private
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> a = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>] }
-<span class="hljs-keyword">const</span> b = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>] }
-
-ObjectUtils.areEqual(a, b)
-<span class="hljs-comment">// true</span>
-
-<span class="hljs-keyword">const</span> c = { <span class="hljs-attr">a</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>, <span class="hljs-number">3</span>] }
-<span class="hljs-keyword">const</span> d = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [] }
-
-<span class="hljs-keyword">const</span> options = { <span class="hljs-attr">attrs</span>: [<span class="hljs-string">'b'</span>] }
-
-ObjectUtils.areEqual(c, d, options)
-<span class="hljs-comment">// true</span></pre>
     
   
 
@@ -1194,6 +1084,319 @@ objectCopy.c == c || objectCopy.d.getFullYear() == d.getFullYear() || objectCopy
 
 ObjectUtils.removeAttrsByType(object, <span class="hljs-built_in">Array</span>)
 <span class="hljs-comment">// { a: 1, b: '2', d: new Date() }</span></pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='objectutilsareequal'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>areEqual(object, objectDiff, options = {}, index = 0)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a copy of <code>attributes</code> as private</p>
+
+    <div class='pre p1 fill-light mt0'>areEqual(object: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, objectDiff: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?, index: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>object</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The base 
+<code>object</code>
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>objectDiff</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The set of options
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
+            = <code>{}</code>)</code>
+	    The set of 
+<code>areEqual</code>
+'s method options 
+<a href="#objectutilsdefault_are_equal_options">ObjectUtils.DEFAULT_ARE_EQUAL_OPTIONS</a>
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>index</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
+            = <code>0</code>)</code>
+	    The set of params
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        The copy of 
+<code>attributes</code>
+ with all attrs as private
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> a = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>] }
+<span class="hljs-keyword">const</span> b = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>] }
+
+ObjectUtils.areEqual(a, b)
+<span class="hljs-comment">// true</span>
+
+<span class="hljs-keyword">const</span> c = { <span class="hljs-attr">a</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>, <span class="hljs-number">3</span>] }
+<span class="hljs-keyword">const</span> d = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [] }
+
+<span class="hljs-keyword">const</span> options = { <span class="hljs-attr">attrs</span>: [<span class="hljs-string">'b'</span>] }
+
+ObjectUtils.areEqual(c, d, options)
+<span class="hljs-comment">// true</span></pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='objectutilsgetattrnames'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getAttrNames(object)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns the list of all <code>attr</code> names in <code>object</code> (nesteds included)</p>
+
+    <div class='pre p1 fill-light mt0'>getAttrNames(object: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>object</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>))</code>
+	    The 
+<code>object</code>
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        The list of 
+<code>attrs</code>
+ (
+<code>null</code>
+ if 
+<code>object</code>
+ is not an instance of 
+<code>Object</code>
+)
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> object = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>], <span class="hljs-attr">d</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() }
+
+ObjectUtils.getAttrs(object)
+<span class="hljs-comment">// [ 'a', 'b', 'c', 'd' ]</span>
+
+ObjectUtils.getAttrs(<span class="hljs-string">'arpel'</span>)
+<span class="hljs-comment">// null</span></pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='objectutilsgetvaluebyindex'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getValueByIndex(object, index)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns the value of an <code>object</code> by <code>attr</code> index</p>
+
+    <div class='pre p1 fill-light mt0'>getValueByIndex(object: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, index: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>object</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The 
+<code>object</code>
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>index</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>0</code>)</code>
+	    The 
+<code>attr</code>
+ index
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The value of the 
+<code>attr</code>
+ in the 
+<code>index</code>
+ position
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> object = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">c</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>], <span class="hljs-attr">d</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() }
+
+ObjectUtils.getValueByIndex(object)
+<span class="hljs-comment">// 1</span>
+
+ObjectUtils.getValueByIndex(object, <span class="hljs-number">2</span>)
+<span class="hljs-comment">// [1, '2]</span>
+
+ObjectUtils.getValueByIndex(object, <span class="hljs-number">12</span>)
+<span class="hljs-comment">// null</span></pre>
     
   
 
