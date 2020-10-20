@@ -177,4 +177,4 @@ workflows:
 
       - docs_upload:
           requires:
-            - npm_publish
+            - npm_release
