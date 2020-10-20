@@ -1,6 +1,6 @@
 {
-  "name": "@ourwork/object-utils",
-  "version": "0.1.3",
+  "name": "@contartec-team/object-utils",
+  "version": "0.1.4",
   "description": "A set of js object utils",
   "main": "lib/ObjectUtils.js",
   "directories": {
@@ -14,11 +14,13 @@
     "test": "cross-env NODE_ENV=test npm run lint && npm run test:coverage",
     "test:watch": "cross-env NODE_ENV=test npm run lint && npm run mocha -- --watch",
     "test:coverage": "cross-env NODE_ENV=test nyc --reporter=text-summary --reporter=lcov --reporter=cobertura --report-dir=./coverage --reporter=html npm run mocha --reporter=min",
-    "update:docs": "npm run docs && git add docs/. && git diff-index --quiet HEAD || git commit -m 'Updating `docs`'"
+    "update:docs": "npm run docs && git add docs/. && git diff-index --quiet HEAD || git commit -m 'Updating `docs`'",
+    "update-version": "node -e 'require(\"@contartec-team/version-release\").updateVersion()'",
+    "release-version": "node -e 'require(\"@contartec-team/version-release\").releaseVersion()'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://hallais@github.com/hallais/ObjectUtils.git"
+    "url": "git+https://github.com/contartec-team/object-utils.git"
   },
   "keywords": [
     "node",
@@ -35,12 +37,16 @@
     "url": "https://github.com/hallais/ObjectUtils/issues"
   },
   "homepage": "https://github.com/hallais/ObjectUtils#readme",
+  "dependencies": {
+    "deep-diff": "^1.0.2",
+    "deep-equal": "^1.0.1"
+  },
   "devDependencies": {
+    "@contartec-team/version-release": "git+https://github.com/contartec-team/version-release.git",
+    "@contartec-team/git-hooks": "git+https://github.com/contartec-team/git-hooks.git",
     "chai": "^4.2.0",
     "chai-things": "^0.2.0",
     "cross-env": "^5.2.0",
-    "deep-diff": "^1.0.2",
-    "deep-equal": "^1.0.1",
     "documentation": "^11.0.0",
     "eslint": "^5.16.0",
     "husky": "^2.3.0",
@@ -48,8 +54,8 @@
     "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^14.1.1",
-    "sinon": "^7.3.2",
-    "sinon-chai": "^3.3.0"
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
   },
   "husky": {
     "hooks": {
