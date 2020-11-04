@@ -1,6 +1,6 @@
 {
   "name": "@contartec-team/object-utils",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A set of js object utils",
   "main": "lib/ObjectUtils.js",
   "directories": {
@@ -39,7 +39,8 @@
   "homepage": "https://github.com/hallais/ObjectUtils#readme",
   "dependencies": {
     "deep-diff": "^1.0.2",
-    "deep-equal": "^1.0.1"
+    "deep-equal": "^1.0.1",
+    "match-recursive": "^0.1.1"
   },
   "devDependencies": {
     "@contartec-team/version-release": "git+https://github.com/contartec-team/version-release.git",
