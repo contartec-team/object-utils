@@ -39,7 +39,7 @@
   "homepage": "https://github.com/contartec-team/object-utils#readme",
   "dependencies": {
     "deep-diff": "^1.0.2",
-    "deep-equal": "^1.0.1",
+    "deep-equal": "^2.0.5",
     "match-recursive": "^0.1.1"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "@contartec-team/git-hooks": "git+https://github.com/contartec-team/git-hooks.git",
     "chai": "^4.2.0",
     "deep-diff": "^1.0.2",
-    "deep-equal": "^1.0.1",
+    "deep-equal": "^2.0.5",
     "match-recursive": "^0.1.1",
     "chai-things": "^0.2.0",
     "cross-env": "^5.2.0",
